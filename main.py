@@ -15,7 +15,7 @@
 ################################
 
 
-class game_mmo_rpg:
+class Game_mmo_rpg:
     def __init__(self, character_name, character_class, character_level):
         self.character_name = character_name
         self.character_class = character_class
@@ -47,8 +47,37 @@ class game_mmo_rpg:
         return f'Character {self.character_name} has {self.character_level} health points, {self.character_level * 100} experience points, {self.character_level} items in their inventory, {self.character_level} skills, and {self.character_level} spells'
 
 
-test_game = game_mmo_rpg('Beer', 'Warrior', 1)
+class Game_monster(Game_mmo_rpg):
+    def __init__(self, character_name):
+        self.monsters = []
+        self.character_name = character_name
+        self.character_level = 100
+    def monster(self, name, hp, attack):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+        
+        
+    def hello(self):
+        print("Hello", self.character_name)
+    
+    
 
-info_string = test_game.info()
-print(info_string)    
+
+monster_1 = Game_monster("God Ziilla")
+monster_2 = Game_monster("King Kong")
+monster_1.hello()
+monster_2.hello()
+
+# print(monster_1.get_status())
+
+
+# print(dir(Game_mmo_rpg))
+
+
+
+# test_game = game_mmo_rpg('Beer', 'Warrior', 1)
+
+# info_string = test_game.info()
+# print(info_string)    
     
