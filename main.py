@@ -11,3 +11,5 @@ test = user_info('Beer', 21)
 
 info_string = test.info()
 print(info_string)
+
+################################
